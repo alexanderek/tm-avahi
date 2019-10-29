@@ -8,5 +8,6 @@ RUN apk add --no-cache \
   && rm -rf /var/cache/apk/*
 
 COPY smb.service /etc/avahi/services
+COPY init.sh /
 
-ENTRYPOINT ["avahi-daemon"]
+ENTRYPOINT ["/init.sh"]
